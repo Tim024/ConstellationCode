@@ -12,10 +12,10 @@ The format is as follows:
 [WALKER]:[ALTITUDE]:[INCLINATION]:[PLANE PARAMS]
 ```
 where:
-- `[WALKER]` being 'D' for delta and 'S' for Star.
+- `[WALKER]` being 'D' for delta and 'S' for Star. Delta will spread the (raan of the) planes evenly between 0-360 degrees, star between 0-180 degrees. It is possible to add a manual raan offset by adding a number after the walker: `[D or S]/[RAAN_OFFSET]`.
 - `[ALTITUDE]` being the altitude in km. In case of elliptical orbits, the altitude is: `[APOGEE]/[PERIGEE]/[ARG_PERIAPSIS]`.
 - `[INCLINATION]` being the inclination in degrees.
-- `[PLANE PARAMS]` being the plane parameters, following the walker definition `[N_SATS]/[N_PLANES]/[F]` with `N_SATS` the total number of satellites, `N_PLANES` the total number of planes and `F` the relative spacing between planes. The offset between planes in degrees is `360*F/N_SATS`.
+- `[PLANE PARAMS]` being the plane parameters, following the walker definition `[N_SATS]/[N_PLANES]/[F]` with `N_SATS` the total number of satellites, `N_PLANES` the total number of planes and `F` the relative spacing between planes. `N_SATS` should be divisible by `N_PLANES`. The offset between planes in degrees is `360*F/N_SATS`. 
 
 
 This represents one shell. Constellations with multiple shells are defined by adding more shells separated by a `+`. As an example:
